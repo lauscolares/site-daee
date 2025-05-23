@@ -1,24 +1,25 @@
-import logo from '../assets/DALogo.png';
+import { Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import theme from '../config/theme';
 import './App.css';
+import Home from './pages/Home';
+import Layout from './pages/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          DA Eng
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Routes>
+        <Route
+          path="/"
+          element={<Layout />}
+          children={[
+            <Route path="/" element={<Home />} />
+          ]}
+        />
+      </Routes>
+    </ThemeProvider>
   );
 }
 
