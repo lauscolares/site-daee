@@ -1,5 +1,4 @@
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
 import logoBranca from "../../assets/DABrancoLogo.png";
 import { useNavigate } from "react-router-dom";
 import { useTheme } from "@emotion/react";
